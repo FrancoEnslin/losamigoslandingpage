@@ -14,24 +14,24 @@ function Home() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       {/*  Site header */}
-      <Header />
+      {/* <Header /> */}
 
       {/*  Page content */}
       <main className="grow">
         {/*  Page illustration */}
-        <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
-          <PageIllustration />
+        <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">   
+          <PageIllustration /> 
         </div>
 
         {/*  Page sections */}
         <HeroHome />
-        <FeaturesBlocks />
-        <FeaturesZigZag />
-        <Testimonials />
+        {/* <FeaturesBlocks /> */}
+        {/* <FeaturesZigZag /> */}
+        {/* <Testimonials /> */}
         <Newsletter />
       </main>
 
-      <Banner />
+      {/* <Banner /> */}
 
       {/*  Site footer */}
       <Footer />

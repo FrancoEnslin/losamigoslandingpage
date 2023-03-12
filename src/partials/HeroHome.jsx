@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from '../utils/Modal';
 
 import HeroImage from '../images/hero-image-01.jpg';
+import LosAmigos from '../images/LosAmigosPhoto.jpg';
 
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -37,29 +38,29 @@ function HeroHome() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h1 mb-4" data-aos="fade-up">
-              Landing template for startups
+              Los Amigos Clothing
             </h1>
             <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
-              Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.
+              Online store coming soon
             </p>
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
                 <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">
-                  Start free trial
+                  Sign me up!
                 </a>
               </div>
-              <div data-aos="fade-up" data-aos-delay="600">
+              {/* <div data-aos="fade-up" data-aos-delay="600">
                 <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">
                   Learn more
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* Hero image */}
           <div>
             <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-              <img className="mx-auto" src={HeroImage} width="1024" height="504" alt="Hero" />
+              <img className="mx-auto" src={LosAmigos} width="800" height="400" alt="Hero" /> 
               <a
                 className="absolute group"
                 href="#0"
@@ -70,7 +71,8 @@ function HeroHome() {
                 }}
                 aria-controls="modal"
               >
-                <svg
+                {/* Play Button */}
+                {/* <svg
                   className="w-16 h-16 sm:w-20 sm:h-20 hover:opacity-75 transition duration-150 ease-in-out"
                   viewBox="0 0 88 88"
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,16 +88,16 @@ function HeroHome() {
                     className="fill-current text-purple-600"
                     d="M52 44a.999.999 0 00-.427-.82l-10-7A1 1 0 0040 37V51a.999.999 0 001.573.82l10-7A.995.995 0 0052 44V44c0 .001 0 .001 0 0z"
                   />
-                </svg>
+                </svg> */}
               </a>
             </div>
 
             {/* Modal */}
-            <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
+            {/* <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
               <div className="relative pb-9/16">
                 <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/174002812" title="Video" allowFullScreen></iframe>
               </div>
-            </Modal>
+            </Modal> */}
           </div>
         </div>
       </div>
