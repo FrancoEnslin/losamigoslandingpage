@@ -1,8 +1,35 @@
-import React from 'react';
+import React, {useRef} from 'react';
+// import emailjs from 'emailjs/browser';
+import emailjs from 'emailjs-com'
+
 
 function Newsletter() {
+
+  const form = useRef();
+  let buttonClicked = false;
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_sbxztqh', 'template_c2npxla', form.current, 'k8LxH255HHry4Id3K')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text); 
+      });
+
+      e.target.reset();
+  };
+
+  function handleClick(){
+    buttonClicked = true;
+    alert("Thank you for subscribing. When we launch, you'll receive your disount code")
+  }
+
+
+
   return (
-    <section>
+    <section id='connect'>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* CTA box */}
@@ -30,13 +57,15 @@ function Newsletter() {
             </div>
 
             {/* CTA form */}
-            <form className="w-full lg:w-1/2">
+            <form className="w-full lg:w-1/2" ref={form} onSubmit={sendEmail}>
               <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none">
-                <input type="email" className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-purple-400" placeholder="Your best email…" aria-label="Your email address" />
-                <a className="btn text-purple-600 bg-purple-100 hover:bg-white shadow" href="#0">Subscribe</a>
+                <input type="email" name="user_email" className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-purple-400" placeholder="Your email address" aria-label="Your email address" />
+                
+                <button className="btn text-purple-600 bg-purple-100 hover:bg-white shadow" type='submit' onClick={handleClick}>Get Discount</button>
               </div>
               {/* Success message */}
-              {/* <p className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">Thanks for subscribing!</p> */}
+              { buttonClicked ?  <p className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">Thanks for subscribing! When we launch, you'll receive your discount code!</p> : <></>}
+             
             </form>
 
           </div>
